@@ -1,0 +1,15 @@
+<% if (alert.message != '') { %>
+<% if (alert.status == 'success') { %>
+<script>
+  $(function() {
+    toastr.success('<%= alert.message %>');
+  });
+</script>
+<% } else { %>
+<script>
+  $(function() {
+    toastr.error('<%= alert.message %>');
+  });
+</script>
+<% } %>
+<% } %>

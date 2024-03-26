@@ -1,0 +1,58 @@
+<table id="example2" class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>#No</th>
+      <th>Voucher Name</th>
+      <th>Coin Quantity</th>
+      <th>Coin Category</th>
+      <th>Coin Price</th>
+      <th>Option</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% for( let index = 0; index < data.length; index++ ) { %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= data[index].name %>
+        <!-- <img src="./uploads/<%= data[index].thumbnail %>" alt="" width="10%;"> -->
+      </td>
+      <td><%= data[index]?.category?.name ?? '-' %></td>
+      <td><% data[index].nominal.forEach(nominal => {%>
+        <span class="badge badge-dark"><%= nominal.coinName%> <%= nominal.coinQuantity%></span>
+        <%  }); %>
+      </td>
+      <td><% if (data[index].status === 'Y') { %>
+        <span class="badge badge-success">Aktif</span>
+        <% }else{ %>
+        <span class="badge badge-success">Non Aktif</span>
+        <%} %>
+      </td>
+      <td>
+        <form action="/voucher/status/<%= data[index]._id %>?_method=PUT" method="POST" style="display: inline-block;">
+          <button class="btn btn-primary btn-sm"><i class="fas fa-folder"></i>
+            <% if (data[index].status === 'Y') { %>
+            Matikan
+            <% }else{ %>
+            Hidupkan
+            <% } %>
+          </button>
+        </form>
+        <a href="/voucher/edit/<%= data[index]._id %>" class="btn btn-info btn-sm"><i class="fas fa-pencil"></i> Edit</a>
+        <form style="display: inline-block;" action="/voucher/delete/<%= data[index]._id %>?_method=DELETE" method="POST">
+          <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+        </form>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+  <!-- <tfoot>
+        <tr>
+          <th>Rendering engine</th>
+          <th>Browser</th>
+          <th>Platform(s)</th>
+          <th>Engine version</th>
+          <th>CSS grade</th>
+        </tr>
+      </tfoot> -->
+</table>

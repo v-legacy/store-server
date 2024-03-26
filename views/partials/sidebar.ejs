@@ -1,0 +1,124 @@
+ <!-- Main Sidebar Container -->
+ <aside class="main-sidebar sidebar-dark-primary elevation-4">
+   <!-- Brand Logo -->
+   <a href="index3.html" class="brand-link">
+     <img src="/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+     <span class="brand-text font-weight-light">AdminLTE 3</span>
+   </a>
+
+   <!-- Sidebar -->
+   <div class="sidebar">
+     <!-- Sidebar user panel (optional) -->
+     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+       <div class="image">
+         <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+       </div>
+       <div class="info">
+         <a href="#" class="d-block"><%= user.name %></a>
+         <span>
+           <p class="text-muted"><%= user.email %></p>
+         </span>
+       </div>
+     </div>
+
+     <!-- SidebarSearch Form -->
+     <div class="form-inline">
+       <div class="input-group" data-widget="sidebar-search">
+         <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+         <div class="input-group-append">
+           <button class="btn btn-sidebar">
+             <i class="fas fa-search fa-fw"></i>
+           </button>
+         </div>
+       </div>
+     </div>
+
+     <!-- Sidebar Menu -->
+     <nav class="mt-2">
+       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+         <li class="nav-item">
+           <a href="/dashboard" class="nav-link <%= url == '/dashboard' ? 'active' : '' %>">
+             <i class="nav-icon fas fa-home"></i>
+             <p>
+               Beranda
+               <span class="badge badge-info right">2</span>
+             </p>
+           </a>
+         </li>
+         <li class="nav-header">Master</li>
+         <li class="nav-item">
+           <a href="/category" class="nav-link <%= url == '/category' ? 'active' : '' %>">
+             <i class="nav-icon far fa-calendar-alt"></i>
+             <p>
+               Kategori
+               <span class="badge badge-info right">2</span>
+             </p>
+           </a>
+         </li>
+         <li class="nav-item">
+           <a href="/nominal " class="nav-link <%= url == '/nominal' ? 'active' : '' %>">
+             <i class="nav-icon fas fa-tasks"></i>
+             <p>
+               Nominal
+               <span class="badge badge-info right">2</span>
+             </p>
+           </a>
+         </li>
+         <li class="nav-item">
+           <a href="/voucher" class="nav-link <%= url == '/voucher' ? 'active' : '' %>">
+             <i class="nav-icon fas fa-image"></i>
+             <p>
+               Voucher
+               <span class="badge badge-info right">2</span>
+             </p>
+           </a>
+         </li>
+         <li class="nav-header">Metode Pembayaran</li>
+         <li class="nav-item">
+           <a href="/bank" class="nav-link <%= url == '/bank' ? 'active' : '' %>">
+             <i class="nav-icon far fa-calendar-alt"></i>
+             <p>
+               Bank
+               <span class="badge badge-info right">2</span>
+             </p>
+           </a>
+         </li>
+         <li class="nav-item">
+           <a href="/payment" class="nav-link <%= url == '/payment' ? 'active' : '' %>">
+             <i class="nav-icon fas fa-money-check"></i>
+             <p>
+               Jenis Pembayaran
+               <span class="badge badge-info right">2</span>
+             </p>
+           </a>
+         </li>
+         <li class="nav-header">Transaksi</li>
+         <li class="nav-item">
+           <a href="/transactions" class="nav-link <%= url == '/transactions' ? 'active' : '' %>">
+             <i class="nav-icon fas fa-shopping-cart"></i>
+             <p>
+               Transaksi
+               <span class="badge badge-info right">2</span>
+             </p>
+           </a>
+         </li>
+         <li class="nav-header">
+           <hr>
+         </li>
+         <li class="nav-item">
+           <a href="/signout" class="nav-link">
+             <i class="nav-icon fa-solid fa-right-from-bracket"></i>
+             <p>
+               SignOut
+               <span class="badge badge-info right">2</span>
+             </p>
+           </a>
+         </li>
+
+
+       </ul>
+     </nav>
+     <!-- /.sidebar-menu -->
+   </div>
+   <!-- /.sidebar -->
+ </aside>
